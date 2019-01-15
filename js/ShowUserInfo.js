@@ -47,7 +47,6 @@ class ShowUserInfo {
             document.getElementById("photo").src = res.user['thumbnailURL'];
         } else {
             document.getElementById("photo").src = "http://cdn.gigya.com/site/images/bsAPI/Placeholder.gif";
-            document.getElementById("profile").style.display = "block";
         }
 
         // Inject the user's birthDay
@@ -65,11 +64,6 @@ class ShowUserInfo {
         // Inject the user's email
         if (res.user['email'] !== '') {
             ShowUserInfo.showParentElementAndInsertHtml('email', res.user['email']);
-        }
-
-        // Inject the user's proxiedEmail
-        if (res.user['proxiedEmail'] !== '') {
-            ShowUserInfo.showParentElementAndInsertHtml('proxiedEmail', res.user['proxiedEmail']);
         }
 
         // Inject the user's country

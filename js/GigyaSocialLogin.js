@@ -30,6 +30,8 @@ class GigyaSocialLogin {
 
     // Handles email value validation
     handleEmailValueValidation(user) {
+        console.log(user.email);
+        console.log('user.email');
         if (user.email) {
             GigyaSocialLogin.increaseOrSetTimesLoggedInCookie();
             window.location = 'b.html';

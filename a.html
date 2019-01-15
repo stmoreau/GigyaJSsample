@@ -1,22 +1,33 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>Gigya Test</title>
 
-		<script defer type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_Y82PzwJ_chSFImHXaIDJClnLyJzmk-VFOavSsaNTzl6m901s_NNxRAS0xJ3bd3_N"></script>
-		<script defer type="text/javascript" src="js/GigyaSocialLogin.js"></script>
-	</head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Gigya Test</title>
 
-	<body>
-		<p>Login with a social network provider:</p>
-		<div id="loginDiv"></div>
-		
-		<form hidden id="emailForm">
-			<label for="email">Please insert your email to login</label>
-			<input type="email" id="email" name="email"/>
-			<span hidden id="emailError">Please enter a valid email address</span>
-			<input type="submit" value="Submit">
-		</form>
-	</body>
+	<script defer type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_Y82PzwJ_chSFImHXaIDJClnLyJzmk-VFOavSsaNTzl6m901s_NNxRAS0xJ3bd3_N"></script>
+	<script defer type="text/javascript" src="js/GigyaSocialLogin.js"></script>
+
+	<link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+	<div class="center">
+		<div class="card large">
+			<div class="center">
+				<h3>Login with a social network provider</h3>
+				<div id="loginDiv"></div>
+
+				<form hidden id="emailForm" class="email-form">
+					<label for="email">Insert your email to login:</label>
+					<input type="email" class="email" id="email" name="email" />
+					<p hidden id="emailError" class="error">Enter a valid email address</p>
+					<input class="button regular" type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>

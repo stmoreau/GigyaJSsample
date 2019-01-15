@@ -1,43 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>Gigya Test - Logged In</title>
 
-		<script defer type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_Y82PzwJ_chSFImHXaIDJClnLyJzmk-VFOavSsaNTzl6m901s_NNxRAS0xJ3bd3_N"></script>
-		<script defer type="text/javascript" src="js/ShowUserInfo.js"></script>
-		<script defer type="text/javascript" src="js/PublishAction.js"></script>
-		<script defer type="text/javascript" src="js/ShareAction.js"></script>
-		<script defer type="text/javascript" src="js/Logout.js"></script>
-	</head>
-	<body>
-		<div style="float:left; margin:0px 10px; padding:10px; border:2px solid blue;">
-			<img id="photo" src="" width="100" />
-			
-			<p hidden id="greetingWrapper">Welcome<span id="newUser"></span>, <span id="nickname"></span>!</p>
-			<p hidden id="loginProviderWrapper">You authenticated with <span id="loginProvider"></span>.</p>			
-			<p hidden >Your birthday is: <span id="birthDay"></span>/<span id="birthMonth"></span>/<span id="birthYear"></span>.</p>
-			<p hidden >Your gender is: <span id="gender"></span>.</p>
-			<p hidden >Your email is: <span id="email"></span>.</p>
-			<p hidden >Your country is: <span id="country"></span>.</p>
-			<p hidden >Your proxiedEmail is: <span id="proxiedEmail"></span>.</p>
-			<p hidden >Your state is: <span id="state"></span>.</p>
-			<p hidden >Your city is: <span id="city"></span>.</p>
-			<p hidden >Your zip is: <span id="zip"></span>.</p>
-			<p hidden >Your firstName is: <span id="firstName"></span>.</p>
-			<p hidden >Your lastName is: <span id="lastName"></span>.</p>
-			<p hidden >Your age is: <span id="age"></span>.</p>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Gigya Test - Logged In</title>
+
+	<script defer type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_Y82PzwJ_chSFImHXaIDJClnLyJzmk-VFOavSsaNTzl6m901s_NNxRAS0xJ3bd3_N"></script>
+	<script defer type="text/javascript" src="js/ShowUserInfo.js"></script>
+	<script defer type="text/javascript" src="js/PublishAction.js"></script>
+	<script defer type="text/javascript" src="js/ShareAction.js"></script>
+	<script defer type="text/javascript" src="js/Logout.js"></script>
+
+	<link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+	<div class="center">
+		<h1 id="greetingWrapper">Welcome<span id="newUser"></span>!</h1>
+
+		<div class="card">
+			<div class="additional">
+				<div class="user-card">
+					<img id="photo" class="center" width="110" height="110" />
+				</div>
+				<div class="more-info">
+					<p hidden>First Name: <span id="firstName"></span></p>
+					<p hidden>Last Name: <span id="lastName"></span></p>
+					<p hidden>Gender: <span id="gender"></span></p>
+					<p hidden>Country: <span id="country"></span></p>
+					<p hidden>State: <span id="state"></span></p>
+					<p hidden>City: <span id="city"></span></p>
+					<p hidden>Zip: <span id="zip"></span></p>
+					<p hidden>Age: <span id="age"></span></p>
+
+					<div class="button-container">
+						<input class="button regular" type="button" id="btnPublishAction" value="Post" />
+						<input class="button flower" type="button" id="btnShareAction" value="Share" />
+						
+						<span id="publishStatus"></span>
+					</div>
+				</div>
+				
+			</div>
+			<div class="general">
+				<h1 id="nickname"></h1>
+
+				<p hidden id="loginProviderWrapper">Authenticated with <span id="loginProvider"></span>.</p>
+				<p hidden>Birthday: <span id="birthDay"></span>/<span id="birthMonth"></span>/<span id="birthYear"></span></p>
+				<p hidden>Email: <span id="email"></span></p>
+
+				<span class="more">Mouse over the card for more info</span>
+			</div>
 		</div>
 
-		<div id="divConnect"></div>
+		<span id="divConnect" class="connected-social"></span>
+		<input id="logout" class="button regular logout" type="button" value="Logout and return to the login page">
+	</div>
+</body>
 
-		<div style="float:left; margin:0px 10px; padding:10px;">
-			<input id="logout" type="button" value="Logout and return to the login page">
-		</div>
-
-		<input type=button id="btnPublishAction" value="Post" />
-		<div id="publishStatus"></div>
-
-		<input type=button id="btnShareAction" value="Share" />
-	</body>
 </html>
