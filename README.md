@@ -13,7 +13,7 @@ This Web App is a demonstration of Gigya's Social Login API.
 
 * run `npm i` to install needed dev dependencies
 * run `npm run dev` to start the development server
-* The local address is copied to clipboard so navigate to it and click on `a.html` - if not in use already the addresses we are interested in is `http://localhost:5000/a` and `http://localhost:5000/b`
+* The local address is copied to clipboard so navigate to it and click on `a.html` - if not in use already the addresses we are interested in are `http://localhost:5000/a` and `http://localhost:5000/b`
 
 ### Run tests (WIP)
 
