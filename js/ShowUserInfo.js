@@ -29,6 +29,7 @@ class ShowUserInfo {
 
     // Renders information needed for the user
     static renderUserInformation(res) {
+        console.log(res.user)
         // Inject the user's nickname
         if (res.user['nickname'] !== '') {
             ShowUserInfo.showParentElementAndInsertHtml('nickname', res.user['nickname']);

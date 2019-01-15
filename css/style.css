@@ -192,3 +192,7 @@ h1, h3 {
     border: 1px solid #92bbec;
     width: 100%;
 }
+
+.email-form .button{
+    margin-top: 5px;
+}

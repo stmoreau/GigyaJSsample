@@ -30,10 +30,21 @@ class GigyaSocialLogin {
 
     // Handles email value validation
     handleEmailValueValidation(user) {
-        console.log(user.email);
-        console.log('user.email');
+        GigyaSocialLogin.increaseOrSetTimesLoggedInCookie();
         if (user.email) {
-            GigyaSocialLogin.increaseOrSetTimesLoggedInCookie();
+            var params = {
+                "profile": {
+                    "email": user.email
+                }
+            }
+            
+            /*
+            * This method is part of the Registration-as-a-Service and the Profile Management - IDS packages.
+            * Both packages are premium platforms that require separate activation
+            * A premium account would be able to see the new email on b.html for social media such as Instagram
+            * which gigya doesn't save by default the user's email in Gigya's User object
+            */
+            gigya.accounts.setAccountInfo(params);
             window.location = 'b.html';
         } else {
             this.showEmailForm();
