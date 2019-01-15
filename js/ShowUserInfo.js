@@ -1,103 +1,108 @@
 class ShowUserInfo {
     constructor() {
-        this.urlParamsArr = {};
-
-        this.findUrlParams();
-        this.renderUserInformation();
+        this.onLoad();
+        this.showAddConnectionsUI();
     }
 
-    findUrlParams() {
-        var urlParams = document.location.search.substr(1).split("&");
-
-        for (var i = 0; i < urlParams.length; i++) {
-            var ret = urlParams[i].toString().split("=");
-            this.urlParamsArr[ret[0]] = decodeURIComponent(ret[1]);
-        }
+    onLoad() {
+        // get user info
+        gigya.socialize.getUserInfo({ callback: this.renderUserInformation });
+        // register for connect status changes
+        gigya.socialize.addEventHandlers({ onConnectionAdded: this.renderUserInformation, onConnectionRemoved: this.renderUserInformation });
     }
 
-    renderUserInformation() {
+    showAddConnectionsUI() {
+        gigya.socialize.showAddConnectionsUI({
+            height:65,
+            width:175,
+            showTermsLink:false,
+            containerID: "divConnect"
+        });
+    }
+
+    renderUserInformation(res) {
         // Inject the user's nickname
-        if (this.urlParamsArr['nickname'] !== '') {
-            this.showElementAndInsertHtml('nickname');
+        if (res.user['nickname'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('nickname', res.user['nickname']);
         }
 
         // Inject the login provider
-        if (this.urlParamsArr['loginProvider'] !== '') {
-            this.showElementAndInsertHtml('loginProvider');
+        if (res.user['loginProvider'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('loginProvider', res.user['loginProvider']);
         }
 
         // Inject personalised greeting
-        document.getElementById('newUser').innerHTML = this.urlParamsArr["newUser"] === 'true' ? '' : ' back';
+        document.getElementById('newUser').innerHTML = res.user["newUser"] === 'true' ? '' : ' back';
 
         // Inject the user's thumbnail
-        if (this.urlParamsArr['thumbnailURL'].length > 0) {
-            document.getElementById("photo").src = this.urlParamsArr['thumbnailURL'];
+        if (res.user['thumbnailURL'].length > 0) {
+            document.getElementById("photo").src = res.user['thumbnailURL'];
         } else {
             document.getElementById("photo").src = "http://cdn.gigya.com/site/images/bsAPI/Placeholder.gif";
             document.getElementById("profile").style.display = "block";
         }
 
         // Inject the user's birthDay
-        if (this.urlParamsArr['birthDay'] !== '' && this.urlParamsArr['birthMonth'] !== '' && this.urlParamsArr['birthYear'] !== '') {
-            this.showElementAndInsertHtml('birthDay');
-            this.showElementAndInsertHtml('birthMonth');
-            this.showElementAndInsertHtml('birthYear');
+        if (res.user['birthDay'] !== '' && res.user['birthMonth'] !== '' && res.user['birthYear'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('birthDay', res.user['birthDay']);
+            ShowUserInfo.showElementAndInsertHtml('birthMonth', res.user['birthMonth']);
+            ShowUserInfo.showElementAndInsertHtml('birthYear', res.user['birthYear']);
         }
 
         // Inject the user's gender
-        if (this.urlParamsArr['gender'] !== '') {
-            this.showElementAndInsertHtml('gender');
+        if (res.user['gender'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('gender', res.user['gender']);
         }
 
         // Inject the user's email
-        if (this.urlParamsArr['email'] !== '') {
-            this.showElementAndInsertHtml('email');
+        if (res.user['email'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('email', res.user['email']);
         }
 
         // Inject the user's proxiedEmail
-        if (this.urlParamsArr['proxiedEmail'] !== '') {
-            this.showElementAndInsertHtml('proxiedEmail');
+        if (res.user['proxiedEmail'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('proxiedEmail', res.user['proxiedEmail']);
         }
 
         // Inject the user's country
-        if (this.urlParamsArr['country'] !== '') {
-            this.showElementAndInsertHtml('country');
+        if (res.user['country'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('country', res.user['country']);
         }
 
         // Inject the user's state
-        if (this.urlParamsArr['state'] !== '') {
-            this.showElementAndInsertHtml('state');
+        if (res.user['state'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('state', res.user['state']);
         }
 
         // Inject the user's city
-        if (this.urlParamsArr['city'] !== '') {
-            this.showElementAndInsertHtml('city');
+        if (res.user['city'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('city', res.user['city']);
         }
 
         // Inject the user's zip
-        if (this.urlParamsArr['zip'] !== '') {
-            this.showElementAndInsertHtml('zip');
+        if (res.user['zip'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('zip', res.user['zip']);
         }
 
         // Inject the user's firstName
-        if (this.urlParamsArr['firstName'] !== '') {
-            this.showElementAndInsertHtml('firstName');
+        if (res.user['firstName'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('firstName', res.user['firstName']);
         }
 
         // Inject the user's lastName
-        if (this.urlParamsArr['lastName'] !== '') {
-            this.showElementAndInsertHtml('lastName');
+        if (res.user['lastName'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('lastName', res.user['lastName']);
         }
 
         // Inject the user's age
-        if (this.urlParamsArr['age'] !== '') {
-            this.showElementAndInsertHtml('age');
+        if (res.user['age'] !== '') {
+            ShowUserInfo.showElementAndInsertHtml('age', res.user['age']);
         }
     }
 
-    showElementAndInsertHtml(value) {
-        document.getElementById(value).parentNode.removeAttribute('hidden');
-        document.getElementById(value).innerHTML = this.urlParamsArr[value];
+    static showElementAndInsertHtml(id, value) {
+        document.getElementById(id).parentNode.removeAttribute('hidden');
+        document.getElementById(id).innerHTML = value;
     }
 
 }
