@@ -106,9 +106,6 @@ class ShowUserInfo {
         if (res.user['age'] !== '') {
             ShowUserInfo.showParentElementAndInsertHtml('age', res.user['age']);
         }
-
-        // Disable publish button if user is not connected
-        document.getElementById('btnPublishAction').disabled = (res.user == null || !res.user.isConnected);
     }
 
     // Shows the parent element and sets the value of the element

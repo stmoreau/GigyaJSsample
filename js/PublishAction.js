@@ -1,14 +1,14 @@
 class PublishAction {
     constructor() {
         // check if btnPublishAction exists
-        if(document.getElementById('btnPublishAction')){
-            document.getElementById('btnPublishAction').addEventListener("click", this.publishAction);
+        if (document.getElementById('btnPublishAction')) {
+            document.getElementById('btnPublishAction').addEventListener("click", PublishAction.publishAction);
         }
     }
 
     // Create and Publish User's Action
     // This method is associated with the "btnPublishAction" click
-    publishAction() {
+    static publishAction() {
         // Constructing a UserAction Object
         var act = new gigya.socialize.UserAction();
 
@@ -22,12 +22,12 @@ class PublishAction {
         // Setting Link Back
         act.setLinkBack("http://bit.ly/5MFb2V");
         act.setUserMessage("This is my message to you");
-        
+
         // Parameters for the publishUserAction method,
         // including the UserAction object
         var params = {
             userAction: act,
-            callback: ShowUserInfo.publishAction_callback
+            callback: PublishAction.publishAction_callback
         };
 
         // Publish the User Action
@@ -38,12 +38,12 @@ class PublishAction {
     static publishAction_callback(response) {
         switch (response.errorCode) {
             case 0:
-                document.getElementById('status').style.color = "green";
-                document.getElementById('status').innerHTML = "Newsfeed item sent.";
+                document.getElementById('publishStatus').style.color = "green";
+                document.getElementById('publishStatus').innerHTML = "Newsfeed item sent.";
                 break;
             default:
-                document.getElementById('status').style.color = "red";
-                document.getElementById('status').innerHTML =
+                document.getElementById('publishStatus').style.color = "red";
+                document.getElementById('publishStatus').innerHTML =
                     "Unable to send newsfeed item. Error Code:" +
                     response.errorCode + "; " + response.errorMessage;
         }

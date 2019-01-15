@@ -27,27 +27,37 @@ class GigyaSocialLogin {
     }
 
     handleEmailValueValidation(user) {
-        const urlParams = this.createUrlParams(user);
+        const urlParams = GigyaSocialLogin.createUrlParams(user);
         if (user.email) {
-            this.increaseOrSetTimesLoggedInCookie();
+            GigyaSocialLogin.increaseOrSetTimesLoggedInCookie();
             window.location = `b.html?${urlParams}`;
         } else {
             this.showEmailForm();
         }
     }
 
-    increaseOrSetTimesLoggedInCookie() {
-        var timesLoggedInCookie = this.getCookie("timesLoggedIn");
-        console.log(timesLoggedInCookie);
+    showEmailForm() {
+        const emailForm = document.getElementById('emailForm');
+        const emailInput = document.getElementById('email');
+        const self = this;
+
+        emailForm.removeAttribute('hidden');
+        emailInput.focus();
+
+        emailForm.addEventListener("submit", evt => self.handleSubmitEmailForm(evt, self));
+    }
+
+    static increaseOrSetTimesLoggedInCookie() {
+        var timesLoggedInCookie = GigyaSocialLogin.getCookie("timesLoggedIn");
         if (timesLoggedInCookie != "") {
             const newTimesLoggedInCookie = Number(timesLoggedInCookie) + 1;
-            this.setCookie("timesLoggedIn", newTimesLoggedInCookie, 365);
+            GigyaSocialLogin.setCookie("timesLoggedIn", newTimesLoggedInCookie, 365);
         } else {
-            this.setCookie("timesLoggedIn", 1, 365);
+            GigyaSocialLogin.setCookie("timesLoggedIn", 1, 365);
         }
     }
 
-    getCookie(cname) {
+    static getCookie(cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
         for (var i = 0; i < ca.length; i++) {
@@ -62,22 +72,11 @@ class GigyaSocialLogin {
         return "";
     }
 
-    setCookie(cname, cvalue, exdays) {
+    static setCookie(cname, cvalue, exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
         var expires = "expires=" + d.toUTCString();
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-
-    showEmailForm() {
-        const emailForm = document.getElementById('emailForm');
-        const emailInput = document.getElementById('email');
-        const self = this;
-
-        emailForm.removeAttribute('hidden');
-        emailInput.focus();
-
-        emailForm.addEventListener("submit", evt => self.handleSubmitEmailForm(evt, self));
     }
 
     handleSubmitEmailForm(evt, self) {
@@ -103,7 +102,7 @@ class GigyaSocialLogin {
         return re.test(String(email).toLowerCase());
     }
 
-    createUrlParams(user) {
+    static createUrlParams(user) {
         let urlParams = "";
         for (var key in user) {
             if (urlParams != "") {
