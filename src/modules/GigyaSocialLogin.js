@@ -1,4 +1,4 @@
-class GigyaSocialLogin {
+export default class GigyaSocialLogin {
     constructor() {
         this.fetchedUserData = {};
         this.showLoginUI();
@@ -124,5 +124,3 @@ class GigyaSocialLogin {
         return re.test(String(email).toLowerCase());
     }
 }
-
-new GigyaSocialLogin();

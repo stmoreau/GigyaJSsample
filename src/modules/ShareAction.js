@@ -1,4 +1,4 @@
-class ShareAction {
+export default class ShareAction {
     constructor() {
         // check if btnPublishAction exists
         if (document.getElementById('btnShareAction')) {
@@ -30,5 +30,3 @@ class ShareAction {
         gigya.socialize.showShareUI(params);
     }
 }
-
-new ShareAction();

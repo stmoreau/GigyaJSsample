@@ -1,4 +1,4 @@
-class Logout {
+export default class Logout {
     constructor() {
         if(document.getElementById('logout')){
             document.getElementById('logout').addEventListener("click", Logout.handleLogout);
@@ -12,5 +12,3 @@ class Logout {
         window.location = 'a.html';
     }
 }
-
-new Logout();

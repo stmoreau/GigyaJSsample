@@ -6,14 +6,13 @@ This Web App is a demonstration of Gigya's Social Login API.
 
 ### Prerequisites
 
-* node
-* npm
-* use of modern browser to view the web app
+* `node` (ideally latest version)
+* `npm` (ideally latest version)
 
 ### Start the dev server
 
-* run `npm install` to install needed dependencies (only `http-server` in this case)
-* run `npm start` to start the `http-server`
+* run `npm install` to install needed dev dependencies
+* run `npm run dev` to start the development server
 
 ### Features
 
@@ -25,20 +24,35 @@ This Web App is a demonstration of Gigya's Social Login API.
 
 ### Documentation
 
-The project contains 2 main directories: `js` and `css` and 2 `html` files in the root directory: `a.html` and `b.html`.
+The project contains:
+- 2 main directories: `public` and `src`
+- `.babelrc` file to set the configuration of the javascript compilation
+- `rollup.config.js` file to set the configuration of the project's bundling
+- `package.json` file with information about the project (dependencies needed, author, etc.)
 
-#### html files
+#### public directory
 
-`a.html` is the starting screen. In this screen the user is able to select the social login that he would like to use to sign in.
-`b.html` contains useful information about the user, gathered from the login process. In addition to that in this screen the user is able to share a post and logout using Gigya's API.
+The `public` directory contains the 2 main html files of this project:
+- `a.html` is the starting screen. In this screen the user is able to select the social login that he would like to use to sign in.
+- `b.html` contains useful information about the user, gathered from the login process. In addition to that in this screen the user is able to share a post and logout using Gigya's API.
+The `public` directory also contains a `styles` directory with the css needed which is used in the `html` files.
+Lastly the `public` directory contains the genrated javascript that is being used in the `html` files.
 
-#### js
+#### src
 
-`js` contains the `javascript` files needed for the `html` files.
+`src` contains the `javascript` modules needed as well as `main-a.js` and `main-b.js` which have the initialisation of the modules.
 
 #### css
 
 `css` contains the `css` files needed for the `html` files.
+
+#### .babelrc
+
+`.babelrc` contains the configuration of the javascript compilation settings
+
+#### rollup.config.js
+
+`rollup.config.js` contains the configuration of the javascript's bundling process
 
 ### MISSIONS
 

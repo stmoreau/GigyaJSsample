@@ -6,10 +6,9 @@
 	<title>Gigya Test</title>
 
 	<script defer type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_Y82PzwJ_chSFImHXaIDJClnLyJzmk-VFOavSsaNTzl6m901s_NNxRAS0xJ3bd3_N"></script>
-	<script defer type="text/javascript" src="js/GigyaSocialLogin.js"></script>
 
-	<link rel="stylesheet" href="css/normalize.css" type="text/css">
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="styles/normalize.css" type="text/css">
+	<link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
 
 <body>
@@ -29,5 +28,20 @@
 		</div>
 	</div>
 </body>
+
+<script>
+	import("/module/main-a.js");
+	window.supportsDynamicImport = true;
+</script>
+<script>
+	if (!window.supportsDynamicImport) {
+		const systemJsLoaderTag = document.createElement('script');
+		systemJsLoaderTag.src = 'https://unpkg.com/systemjs@2.0.0/dist/s.min.js';
+		systemJsLoaderTag.addEventListener('load', function () {
+			System.import('./nomodule/main-a.js');
+		});
+		document.head.appendChild(systemJsLoaderTag);
+	}
+</script>
 
 </html>

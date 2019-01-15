@@ -1,4 +1,4 @@
-class ShowUserInfo {
+export default class ShowUserInfo {
     constructor() {
         ShowUserInfo.getUserInfo();
         ShowUserInfo.showAddConnectionsUI();
@@ -108,5 +108,3 @@ class ShowUserInfo {
         document.getElementById(id).innerHTML = value;
     }
 }
-
-new ShowUserInfo();
