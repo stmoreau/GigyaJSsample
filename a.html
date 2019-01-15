@@ -1,19 +1,21 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>Gigya Test</title>
 
-		<!-- The following script directive is included for your convenience -->
-		<!-- socialize.js script should only be included once -->
-		<script type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_Y82PzwJ_chSFImHXaIDJClnLyJzmk-VFOavSsaNTzl6m901s_NNxRAS0xJ3bd3_N"></script>
-	</head>
-	<body>
-		<p><input type="button" onclick="window.location='b.html?nickname=My Nickname&loginProvider=Button'; return false;" value="Login"></p>
-		<p>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>Gigya Test</title>
+
+	<!-- The following script directive is included for your convenience -->
+	<!-- socialize.js script should only be included once -->
+	<script defer type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_Y82PzwJ_chSFImHXaIDJClnLyJzmk-VFOavSsaNTzl6m901s_NNxRAS0xJ3bd3_N"></script>
+	<script defer type="text/javascript" src="/GigyaSocialLogin.js"></script>
+</head>
+
+<body>
+	<p>
 		Login with a social network provider:
 		<br>(That's part of your mission)
-			<!-- YOUR MISSION:
+		<!-- YOUR MISSION:
 				Run these pages with your favorite web server.
 				
 				Tip: call up the page using localhost as the domain (this will allow the Gigya API key to work properly):
@@ -29,6 +31,17 @@
 				   many times the user has logged in (e.g., use a cookie or database).
 				   (You can use whatever server-side or client-side implementation you want)
 			-->
-		</p>
-	</body>
+	</p>
+	<div id="loginDiv"></div>
+	
+	<form hidden id="emailForm">
+		<label for="email">Please insert your email to login</label>
+		<input type="email" id="email" name="email"/>
+		<span hidden id="emailError">Please enter a valid email address</span>
+		<input type="submit" value="Submit">
+	</form> 
+
+	</div>
+</body>
+
 </html>
