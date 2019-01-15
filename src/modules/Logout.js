@@ -9,6 +9,6 @@ export default class Logout {
     // Handles the logout functionality
     static handleLogout() {
         gigya.socialize.logout();
-        window.location = 'a.html';
+        window.location = 'a';
     }
 }
