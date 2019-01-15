@@ -53,7 +53,7 @@ Lastly the `public` directory contains the genrated javascript that is being use
 
 #### `test` directory
 
-`test` contains the `javascript` unit tests for the application. (WIP)
+`test` contains the `javascript` unit tests for the application using `jest`. (WIP)
 
 #### `.babelrc` file
 
