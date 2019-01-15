@@ -1,3 +1,46 @@
+# Gigya Social Login JS Sample
+
+This Web App is a demonstration of Gigya's Social Login API.
+
+![Gigya](Gigya.gif)
+
+### Prerequisites
+
+* node
+* npm
+
+### Start the dev server
+
+* run `npm install` to install needed dependencies (only `http-server` in this case)
+* run `npm start` to start the `http-server`
+
+### Features
+
+* Users can sign in using any of the social profiles supported by Gigya's API.
+* During the login process if the user's email is not present in the User object given in the response from Gigya's API, the is prompted to provide his email address before redirecting to the next page
+* `timesLoggedIn` cookie gets created the first time a user logs in having as initial value 1 which gets incremented every time the user logs back in the application. This cookie's expiration date is one year after the user's last log in.
+* Once logged in the user gets a personalised greeting (depending if he is a new user or not) and is able to view useful information for his profile gathered during the sign in process.
+* Once logged in the user is able to share a post and log out using Gigya's API.
+
+### Documentation
+
+The project contains 2 main directories: `js` and `css` and 2 `html` files in the root directory: `a.html` and `b.html`.
+
+#### html files
+
+`a.html` is the starting screen. In this screen the user is able to select the social login that he would like to use to sign in.
+`b.html` contains useful information about the user, gathered from the login process. In addition to that in this screen the user is able to share a post and logout using Gigya's API.
+
+#### js
+
+`js` contains the `javascript` files needed for the `html` files.
+
+#### css
+
+`css` contains the `css` files needed for the `html` files.
+
+### MISSIONS
+
 In `a.html` mission is to:
 Run these pages with your favorite web server.
 				

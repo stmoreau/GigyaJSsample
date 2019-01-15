@@ -1,11 +1,11 @@
 {
   "name": "gigyajssample",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "start": "http-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server"
   },
-  "author": "",
+  "author": "Stephane Moreau",
   "license": "ISC",
   "dependencies": {
     "http-server": "^0.11.1"
