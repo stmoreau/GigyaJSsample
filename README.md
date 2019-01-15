@@ -11,9 +11,16 @@ This Web App is a demonstration of Gigya's Social Login API.
 
 ### Start the dev server
 
-* run `npm install` to install needed dev dependencies
+* run `npm i` to install needed dev dependencies
 * run `npm run dev` to start the development server
 * The local address is copied to clipboard so navigate to it and click on `a.html` - if not in use already the addresses we are interested in is `http://localhost:5000/a` and `http://localhost:5000/b`
+
+### Run tests (WIP)
+
+* run `npm i` to install needed dev dependencies
+* run `npm t` to start the development server
+* test results will be shown on the console as well as coverage of the files
+* coverage report can be found in browser as well on a generated file `coverage/lcov-report/index.html`
 
 ### Features
 
@@ -32,7 +39,7 @@ The project contains:
 - `jest.config.js` file to set the configuration of jest for testing
 - `package.json` file with information about the project (dependencies needed, author, etc.)
 
-#### public directory
+#### `public` directory
 
 The `public` directory contains the 2 main html files of this project:
 - `a.html` is the starting screen. In this screen the user is able to select the social login that he would like to use to sign in.
@@ -40,27 +47,27 @@ The `public` directory contains the 2 main html files of this project:
 The `public` directory also contains a `styles` directory with the css needed which is used in the `html` files.
 Lastly the `public` directory contains the genrated javascript that is being used in the `html` files.
 
-#### src directory
+#### `src` directory
 
 `src` contains the `javascript` modules needed as well as `main-a.js` and `main-b.js` which have the initialisation of the modules.
 
-#### test directory
+#### `test` directory
 
 `test` contains the `javascript` unit tests for the application. (WIP)
 
-#### .babelrc
+#### `.babelrc` file
 
 `.babelrc` contains the configuration of the javascript compilation settings
 
-#### rollup.config.js
+#### `rollup.config.js` file
 
 `rollup.config.js` contains the configuration of the javascript's bundling process
 
-#### jest.config.js
+#### `jest.config.js` file
 
 `jest.config.js` contains the configuration of jest for testing
 
-#### package.json
+#### `package.json` file
 
 `package.json` contains information about the project (dependencies needed, author, etc.)
 
