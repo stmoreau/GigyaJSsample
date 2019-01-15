@@ -9,11 +9,10 @@
 	</head>
 	<body>
 		<div style="float:left; margin:0px 10px; padding:10px; border:2px solid blue;">
-			<p hidden id="greetingWrapper">Welcome<span id="newUser"></span>, <span id="nickname"></span>!</p>
-			<p hidden id="loginProviderWrapper">You authenticated with <span id="loginProvider"></span>.</p>
-			
 			<img id="photo" src="" width="100" />
 			
+			<p hidden id="greetingWrapper">Welcome<span id="newUser"></span>, <span id="nickname"></span>!</p>
+			<p hidden id="loginProviderWrapper">You authenticated with <span id="loginProvider"></span>.</p>			
 			<p hidden >Your birthday is: <span id="birthDay"></span>/<span id="birthMonth"></span>/<span id="birthYear"></span>.</p>
 			<p hidden >Your gender is: <span id="gender"></span>.</p>
 			<p hidden >Your email is: <span id="email"></span>.</p>
@@ -30,7 +29,7 @@
 		<div id="divConnect"></div>
 
 		<div style="float:left; margin:0px 10px; padding:10px;">
-			<input type="button" onclick="window.location='a.html'; return false;" value="Logout and return to the login page">
+			<input id="logout" type="button" value="Logout and return to the login page">
 		</div>
 	</body>
 </html>

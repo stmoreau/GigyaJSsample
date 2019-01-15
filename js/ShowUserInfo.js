@@ -2,8 +2,18 @@ class ShowUserInfo {
     constructor() {
         this.onLoad();
         this.showAddConnectionsUI();
+        this.attachLogoutHandler();
     }
 
+    attachLogoutHandler(){
+        document.getElementById('logout').addEventListener("click", this.handleLogout);
+    }
+
+    handleLogout() {
+        gigya.socialize.logout();
+        window.location='a.html';
+    }
+    
     onLoad() {
         // get user info
         gigya.socialize.getUserInfo({ callback: this.renderUserInformation });
