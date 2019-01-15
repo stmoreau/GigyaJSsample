@@ -1,44 +1,42 @@
 class ShowUserInfo {
     constructor() {
-        this.onLoad();
-        this.showAddConnectionsUI();
-        this.attachLogoutHandler();
+        ShowUserInfo.getUserInfo();
+        ShowUserInfo.showAddConnectionsUI();
     }
 
-    attachLogoutHandler(){
-        document.getElementById('logout').addEventListener("click", this.handleLogout);
-    }
-
-    handleLogout() {
-        gigya.socialize.logout();
-        window.location='a.html';
-    }
-    
-    onLoad() {
+    // Gets user information
+    static getUserInfo() {
         // get user info
-        gigya.socialize.getUserInfo({ callback: this.renderUserInformation });
+        gigya.socialize.getUserInfo({
+            callback: ShowUserInfo.renderUserInformation
+        });
         // register for connect status changes
-        gigya.socialize.addEventHandlers({ onConnectionAdded: this.renderUserInformation, onConnectionRemoved: this.renderUserInformation });
+        gigya.socialize.addEventHandlers({
+            onConnectionAdded: ShowUserInfo.renderUserInformation,
+            onConnectionRemoved: ShowUserInfo.renderUserInformation
+        });
     }
 
-    showAddConnectionsUI() {
+    // Shows the connected social media on this app
+    static showAddConnectionsUI() {
         gigya.socialize.showAddConnectionsUI({
-            height:65,
-            width:175,
-            showTermsLink:false,
+            height: 65,
+            width: 175,
+            showTermsLink: false,
             containerID: "divConnect"
         });
     }
 
-    renderUserInformation(res) {
+    // Renders information needed for the user
+    static renderUserInformation(res) {
         // Inject the user's nickname
         if (res.user['nickname'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('nickname', res.user['nickname']);
+            ShowUserInfo.showParentElementAndInsertHtml('nickname', res.user['nickname']);
         }
 
         // Inject the login provider
         if (res.user['loginProvider'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('loginProvider', res.user['loginProvider']);
+            ShowUserInfo.showParentElementAndInsertHtml('loginProvider', res.user['loginProvider']);
         }
 
         // Inject personalised greeting
@@ -54,67 +52,70 @@ class ShowUserInfo {
 
         // Inject the user's birthDay
         if (res.user['birthDay'] !== '' && res.user['birthMonth'] !== '' && res.user['birthYear'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('birthDay', res.user['birthDay']);
-            ShowUserInfo.showElementAndInsertHtml('birthMonth', res.user['birthMonth']);
-            ShowUserInfo.showElementAndInsertHtml('birthYear', res.user['birthYear']);
+            ShowUserInfo.showParentElementAndInsertHtml('birthDay', res.user['birthDay']);
+            ShowUserInfo.showParentElementAndInsertHtml('birthMonth', res.user['birthMonth']);
+            ShowUserInfo.showParentElementAndInsertHtml('birthYear', res.user['birthYear']);
         }
 
         // Inject the user's gender
         if (res.user['gender'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('gender', res.user['gender']);
+            ShowUserInfo.showParentElementAndInsertHtml('gender', res.user['gender']);
         }
 
         // Inject the user's email
         if (res.user['email'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('email', res.user['email']);
+            ShowUserInfo.showParentElementAndInsertHtml('email', res.user['email']);
         }
 
         // Inject the user's proxiedEmail
         if (res.user['proxiedEmail'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('proxiedEmail', res.user['proxiedEmail']);
+            ShowUserInfo.showParentElementAndInsertHtml('proxiedEmail', res.user['proxiedEmail']);
         }
 
         // Inject the user's country
         if (res.user['country'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('country', res.user['country']);
+            ShowUserInfo.showParentElementAndInsertHtml('country', res.user['country']);
         }
 
         // Inject the user's state
         if (res.user['state'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('state', res.user['state']);
+            ShowUserInfo.showParentElementAndInsertHtml('state', res.user['state']);
         }
 
         // Inject the user's city
         if (res.user['city'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('city', res.user['city']);
+            ShowUserInfo.showParentElementAndInsertHtml('city', res.user['city']);
         }
 
         // Inject the user's zip
         if (res.user['zip'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('zip', res.user['zip']);
+            ShowUserInfo.showParentElementAndInsertHtml('zip', res.user['zip']);
         }
 
         // Inject the user's firstName
         if (res.user['firstName'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('firstName', res.user['firstName']);
+            ShowUserInfo.showParentElementAndInsertHtml('firstName', res.user['firstName']);
         }
 
         // Inject the user's lastName
         if (res.user['lastName'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('lastName', res.user['lastName']);
+            ShowUserInfo.showParentElementAndInsertHtml('lastName', res.user['lastName']);
         }
 
         // Inject the user's age
         if (res.user['age'] !== '') {
-            ShowUserInfo.showElementAndInsertHtml('age', res.user['age']);
+            ShowUserInfo.showParentElementAndInsertHtml('age', res.user['age']);
         }
+
+        // Disable publish button if user is not connected
+        document.getElementById('btnPublishAction').disabled = (res.user == null || !res.user.isConnected);
     }
 
-    static showElementAndInsertHtml(id, value) {
+    // Shows the parent element and sets the value of the element
+    static showParentElementAndInsertHtml(id, value) {
         document.getElementById(id).parentNode.removeAttribute('hidden');
         document.getElementById(id).innerHTML = value;
     }
-
 }
 
 new ShowUserInfo();
