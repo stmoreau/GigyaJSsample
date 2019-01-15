@@ -32,7 +32,7 @@ class GigyaSocialLogin {
     handleEmailValueValidation(user) {
         GigyaSocialLogin.increaseOrSetTimesLoggedInCookie();
         if (user.email) {
-            var params = {
+            const params = {
                 "profile": {
                     "email": user.email
                 }
@@ -42,7 +42,8 @@ class GigyaSocialLogin {
             * This method is part of the Registration-as-a-Service and the Profile Management - IDS packages.
             * Both packages are premium platforms that require separate activation
             * A premium account would be able to see the new email on b.html for social media such as Instagram
-            * which gigya doesn't save by default the user's email in Gigya's User object
+            * which according to https://developers.gigya.com/display/GD/User+JS
+            *  Gigya doesn't save by default the user's email in Gigya's User object
             */
             gigya.accounts.setAccountInfo(params);
             window.location = 'b.html';
@@ -84,7 +85,7 @@ class GigyaSocialLogin {
 
     // Handles cookie that counts number of times user has logged in using GigyaSocialLogin
     static increaseOrSetTimesLoggedInCookie() {
-        var timesLoggedInCookie = GigyaSocialLogin.getCookie("timesLoggedIn");
+        const timesLoggedInCookie = GigyaSocialLogin.getCookie("timesLoggedIn");
         if (timesLoggedInCookie != "") {
             const newTimesLoggedInCookie = Number(timesLoggedInCookie) + 1;
             GigyaSocialLogin.setCookie("timesLoggedIn", newTimesLoggedInCookie, 365);
@@ -95,10 +96,10 @@ class GigyaSocialLogin {
 
     // Gets cookie value
     static getCookie(cname) {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
+        const name = cname + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
             while (c.charAt(0) == ' ') {
                 c = c.substring(1);
             }
@@ -111,15 +112,15 @@ class GigyaSocialLogin {
 
     // Set cookie
     static setCookie(cname, cvalue, exdays) {
-        var d = new Date();
+        const d = new Date();
         d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toUTCString();
+        const expires = "expires=" + d.toUTCString();
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
 
     // Email validation
     static validateEmail(email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
 }

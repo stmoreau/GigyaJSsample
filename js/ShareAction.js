@@ -10,7 +10,7 @@ class ShareAction {
     // This method is associated with the "btnPublishAction" click
     static shareAction() {
         // Constructing a UserAction Object
-        var act = new gigya.socialize.UserAction();
+        const act = new gigya.socialize.UserAction();
 
         act.setTitle("This is a test title");  // Setting the Title
         act.setLinkBack("https://demo.gigya.com/about.php");  // Setting the Link Back
@@ -20,7 +20,7 @@ class ShareAction {
         // Adding a Media Item (image)
         act.addMediaItem( { type: 'image', src: 'https://demo.gigya.com/images/300x250_myoss_3frames-lg.gif', href: 'https://demo.gigya.com/about.php' });
         
-        var params = {
+        const params = {
             userAction:act,
             showMoreButton: true,
             showEmailButton: true

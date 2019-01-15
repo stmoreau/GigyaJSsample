@@ -8,6 +8,7 @@ This Web App is a demonstration of Gigya's Social Login API.
 
 * node
 * npm
+* use of modern browser to view the web app
 
 ### Start the dev server
 

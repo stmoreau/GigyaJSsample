@@ -109,7 +109,6 @@ h1, h3 {
     justify-content: center;
     align-items: center;
     flex: 0 0 160px;
-    box-shadow: 2px 5px 10px var(--color-smoke);
 }
 
 .button:hover {
