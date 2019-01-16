@@ -53,7 +53,7 @@
 </body>
 
 <script>
-	import("/module/main-b.js");
+	import("/module/welcome.js");
 	window.supportsDynamicImport = true;
 </script>
 <script>
@@ -61,7 +61,7 @@
 		const systemJsLoaderTag = document.createElement('script');
 		systemJsLoaderTag.src = 'https://unpkg.com/systemjs@2.0.0/dist/s.min.js';
 		systemJsLoaderTag.addEventListener('load', function () {
-			System.import('./nomodule/main-b.js');
+			System.import('./nomodule/welcome.js');
 		});
 		document.head.appendChild(systemJsLoaderTag);
 	}

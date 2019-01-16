@@ -3,7 +3,7 @@ import babel from 'rollup-plugin-babel';
 
 export default [
   {
-    input: ["src/main-a.js", "src/main-b.js"],
+    input: ["src/login.js", "src/welcome.js"],
     output: [
       // ES module version, for modern browsers
       {

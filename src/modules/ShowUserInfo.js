@@ -32,7 +32,7 @@ export default class ShowUserInfo {
     if (res.user.nickname) {
       ShowUserInfo.renderUserInformation(res.user);
     } else {
-      window.location = 'a';
+      window.location = 'login';
     }
   }
 

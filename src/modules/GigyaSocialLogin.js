@@ -48,7 +48,7 @@ export default class GigyaSocialLogin {
              * Gigya doesn't save by default the user's email in Gigya's User object
              */
             gigya.accounts.setAccountInfo(params);
-            window.location = 'b';
+            window.location = 'welcome';
         } else {
             this.showEmailForm();
         }
