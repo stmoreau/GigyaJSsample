@@ -5,8 +5,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<title>Gigya Tech Assessment - Logged In</title>
 
-	<script defer type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_Y82PzwJ_chSFImHXaIDJClnLyJzmk-VFOavSsaNTzl6m901s_NNxRAS0xJ3bd3_N"></script>
-
 	<link rel="stylesheet" href="styles/normalize.css" type="text/css">
 	<link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
@@ -34,7 +32,7 @@
 						<input class="button flower" type="button" id="btnShareAction" value="Share" />
 					</div>
 				</div>
-				
+
 			</div>
 			<div class="general">
 				<h1 id="nickname"></h1>
@@ -51,15 +49,19 @@
 		<input id="logout" class="button regular logout" type="button" value="Logout and return to the login page">
 	</div>
 </body>
+<script type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_Y82PzwJ_chSFImHXaIDJClnLyJzmk-VFOavSsaNTzl6m901s_NNxRAS0xJ3bd3_N"></script>
 
+<!-- Logic to import the welcome module in modern browsers that support HTML Imports: https://caniuse.com/#search=import -->
 <script>
 	import("/module/welcome.js");
 	window.supportsDynamicImport = true;
 </script>
+
+<!-- Logic to load systemjs script in order to support older browsers that cannot handle HTML Imports: https://caniuse.com/#search=import -->
 <script>
 	if (!window.supportsDynamicImport) {
 		const systemJsLoaderTag = document.createElement('script');
-		systemJsLoaderTag.src = 'https://unpkg.com/systemjs@2.0.0/dist/s.min.js';
+		systemJsLoaderTag.src = 'https://unpkg.com/systemjs@3.0.0/dist/s.min.js';
 		systemJsLoaderTag.addEventListener('load', function () {
 			System.import('./nomodule/welcome.js');
 		});

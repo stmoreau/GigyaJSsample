@@ -5,13 +5,13 @@ export default [
   {
     input: ["src/login.js", "src/welcome.js"],
     output: [
-      // ES module version, for modern browsers
+      // ES module version, for modern browsers that support HTML Imports: https://caniuse.com/#search=import
       {
         dir: "public/module",
         format: "es",
         sourcemap: true
       },
-      // SystemJS version, for older browsers
+      // SystemJS version, for older browsers that do not support HTML Imports: https://caniuse.com/#search=import
       {
         dir: "public/nomodule",
         format: "system",
