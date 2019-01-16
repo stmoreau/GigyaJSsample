@@ -14,7 +14,7 @@ export default class GigyaSocialLogin {
             width: 220,
             height: 60,
             cid: '',
-            showTermsLink: false,
+            showTermsLink: true,
             onLogin: data => self.handleSocialLogin(data),
         });
     }
