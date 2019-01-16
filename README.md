@@ -2,7 +2,7 @@
 
 This Web App is a demonstration of Gigya's Social Login API.
 
-![Gigya](Gigya.gif)
+![Gigya](docs/Gigya.gif)
 
 ### Prerequisites
 
@@ -34,7 +34,7 @@ This Web App is a demonstration of Gigya's Social Login API.
 ### Documentation
 
 The project contains:
-- 3 main directories: `public`, `src` and `test` (WIP)
+- 3 main directories: `public`, `src`, `test` (WIP) and `docs`
 - `.babelrc` file to set the configuration of the javascript compilation
 - `rollup.config.js` file to set the configuration of the project's bundling
 - `jest.config.js` file to set the configuration of jest for testing
@@ -55,6 +55,10 @@ Lastly the `public` directory contains the genrated javascript that is being use
 #### `test` directory
 
 `test` contains the `javascript` unit tests for the application using `jest`. (WIP)
+
+#### `docs` directory
+
+`docs` contains documentation for the project. (eg. [User Stories](docs/user-stories.md)).
 
 #### `.babelrc` file
 

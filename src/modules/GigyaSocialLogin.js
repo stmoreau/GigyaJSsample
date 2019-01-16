@@ -45,7 +45,7 @@ export default class GigyaSocialLogin {
              * Both packages are premium platforms that require separate activation
              * A premium account would be able to see the new email on b.html for social media such as Instagram
              * which according to https://developers.gigya.com/display/GD/User+JS
-             *  Gigya doesn't save by default the user's email in Gigya's User object
+             * Gigya doesn't save by default the user's email in Gigya's User object
              */
             gigya.accounts.setAccountInfo(params);
             window.location = 'b';
