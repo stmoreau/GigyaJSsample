@@ -1,9 +1,8 @@
 export default class Logout {
     constructor() {
         const logoutEl = document.getElementById('logout');
-        /* istanbul ignore else */
-        if(logoutEl){
-            logoutEl.addEventListener("click", Logout.handleLogout);
+        if (logoutEl) {
+            logoutEl.addEventListener('click', Logout.handleLogout);
         }
     }
 

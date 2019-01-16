@@ -27,8 +27,9 @@ This Web App is a demonstration of Gigya's Social Login API.
 * Users can sign in using any of the social profiles supported by Gigya's API.
 * During the login process if the user's email is not present in the User object given in the response from Gigya's API, the is prompted to provide his email address before redirecting to the next page
 * `timesLoggedIn` cookie gets created the first time a user logs in having as initial value 1 which gets incremented every time the user logs back in the application. This cookie's expiration date is one year after the user's last log in.
-* Once logged in the user gets a personalised greeting (depending if he is a new user or not) and is able to view useful information for his profile gathered during the sign in process.
+* Once logged in the user gets a personalised greeting (depending if she is a new user or not) and is able to view useful information for his profile gathered during the sign in process.
 * Once logged in the user is able to share a post and log out using Gigya's API.
+* If the user tries to access the `/b` screen without having signed in yet, she will get redirected back to `/a`.
 
 ### Documentation
 
@@ -42,7 +43,7 @@ The project contains:
 #### `public` directory
 
 The `public` directory contains the 2 main html files of this project:
-- `a.html` is the starting screen. In this screen the user is able to select the social login that he would like to use to sign in.
+- `a.html` is the starting screen. In this screen the user is able to select the social login that she would like to use to sign in.
 - `b.html` contains useful information about the user, gathered from the login process. In addition to that in this screen the user is able to share a post and logout using Gigya's API.
 The `public` directory also contains a `styles` directory with the css needed which is used in the `html` files.
 Lastly the `public` directory contains the genrated javascript that is being used in the `html` files.

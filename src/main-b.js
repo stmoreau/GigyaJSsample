@@ -1,9 +1,9 @@
-import Logout from './modules/Logout';
-import ShareAction from './modules/ShareAction';
 import ShowUserInfo from './modules/ShowUserInfo';
+import ShareAction from './modules/ShareAction';
+import Logout from './modules/Logout';
 
 (() => {
-    new Logout();
-    new ShareAction();
-    new ShowUserInfo();
+  new ShowUserInfo();
+  new ShareAction();
+  new Logout();
 })();
