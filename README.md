@@ -85,10 +85,10 @@ Tip: call up the page using localhost as the domain (this will allow the Gigya A
 http://localhost/.../login.html
 
 1) Add the Gigya login component showLoginUI within a container
-2) After authentication, redirect to b.html
+2) After authentication, redirect to welcome.html
 3) Bonus points: from the authentication response, if email is not
 present in the User object, prompt the user to enter an email, then
-redirect to b.html (no need to persist email, just ask for it)
+redirect to welcome.html (no need to persist email, just ask for it)
 (hint: you will need to use addEventHandlers for the onLogin event)
 4) Bonus-bonus points: show some kind of counter or flag indicating how
 many times the user has logged in (e.g., use a cookie or database).
