@@ -50,7 +50,7 @@ Lastly the `public` directory contains the genrated javascript that is being use
 
 #### `src` directory
 
-`src` contains the `javascript` modules needed as well as `main-a.js` and `main-b.js` which have the initialisation of the modules.
+`src` contains the `javascript` modules and utility functions needed, as well as `main-a.js` and `main-b.js` which have the initialisation of the modules.
 
 #### `test` directory
 
