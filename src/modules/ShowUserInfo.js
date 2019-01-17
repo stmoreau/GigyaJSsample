@@ -17,7 +17,7 @@ export default class ShowUserInfo {
     });
   }
 
-  // Shows the connected social media on this app
+  // Shows the connected social network provider on this app
   static showAddConnectionsUI() {
     gigya.socialize.showAddConnectionsUI({
       height: 65,
