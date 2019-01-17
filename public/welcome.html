@@ -51,13 +51,13 @@
 </body>
 <script type="text/javascript" src="http://cdn.gigya.com/js/socialize.js?apiKey=2_Y82PzwJ_chSFImHXaIDJClnLyJzmk-VFOavSsaNTzl6m901s_NNxRAS0xJ3bd3_N"></script>
 
-<!-- Logic to import the welcome module in modern browsers that support HTML Imports: https://caniuse.com/#search=import -->
+<!-- Logic to import the welcome module in modern browsers that support dynamic imports https://caniuse.com/#feat=es6-module-dynamic-import -->
 <script>
 	import("/module/welcome.js");
 	window.supportsDynamicImport = true;
 </script>
 
-<!-- Logic to load systemjs script in order to support older browsers that cannot handle HTML Imports: https://caniuse.com/#search=import -->
+<!-- Logic to load systemjs script in order to support older browsers that cannot handle dynamic imports https://caniuse.com/#feat=es6-module-dynamic-import -->
 <script>
 	if (!window.supportsDynamicImport) {
 		const systemJsLoaderTag = document.createElement('script');
