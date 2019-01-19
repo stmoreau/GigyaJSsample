@@ -2,12 +2,24 @@
 
 html,
 body {
-    background: #9abbe8;
+    height: 100vh;
+    width: 100%;
+    background: #097DB0; /* For browsers that do not support gradients */
+    background-image: radial-gradient(#52C8F0, #097DB0);
     font-family: Abel, Arial, Verdana, sans-serif;
 }
 
 h1, h3 {
     text-align: center;
+}
+
+h1.title-heading {
+    width: 100%;
+    margin-top: 0;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
 }
 
 .center {
@@ -194,4 +206,17 @@ h1, h3 {
 
 .email-form .button{
     margin-top: 5px;
+}
+
+/* Gigya style change */
+#loginDiv td > span,
+#divConnect td > span {
+    color: #005997 !important;
+    font-weight: bold;
+}
+
+#loginDiv td > span span,
+#divConnect td > span span {
+    color: #202129 !important;
+    font-weight: bold;
 }
