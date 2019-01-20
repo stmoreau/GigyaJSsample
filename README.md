@@ -58,7 +58,7 @@ Lastly the `public` directory contains the genrated javascript that is being use
 
 #### `docs` directory
 
-`docs` contains documentation for the project. (eg. [User Stories](docs/user-stories.md)).
+`docs` contains documentation for the project. (eg. [User Stories](docs/user-stories.md), [Flowchart](docs/flowchart.jpg), [Short Gif that shows the UX of the app](docs/Gigya.gif)).
 
 #### `.babelrc` file
 
