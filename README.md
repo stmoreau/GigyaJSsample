@@ -25,7 +25,7 @@ This Web App is a demonstration of Gigya's Social Login API.
 ### Features
 
 * Users can sign in using any of the social network providers supported by Gigya's API.
-* During the login process if the user's email is not present in the User object given in the response from Gigya's API, the is prompted to provide his email address before redirecting to the next page
+* During the login process if the user's email is not present in the User object given in the response from Gigya's API, the is prompted to provide her email address before redirecting to the next page
 * `timesLoggedIn` cookie gets created the first time a user logs in having as initial value 1 which gets incremented every time the user logs back in the application. This cookie's expiration date is one year after the user's last log in.
 * Once logged in the user gets a personalised greeting (depending if she is a new user or not) and is able to view useful information for his profile gathered during the sign in process.
 * Once logged in the user is able to share a post and log out using Gigya's API.
