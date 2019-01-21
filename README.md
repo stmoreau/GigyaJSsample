@@ -6,8 +6,8 @@ This Web App is a demonstration of Gigya's Social Login API.
 
 ### Prerequisites
 
-* `node` (ideally latest version)
-* `npm` (ideally latest version)
+* [`node`](https://nodejs.org/en/download/)
+* [`npm`](https://www.npmjs.com/get-npm)
 
 ### Start the dev server
 
