@@ -4,8 +4,7 @@ html,
 body {
     height: 100vh;
     width: 100%;
-    background: #097DB0; /* For browsers that do not support gradients */
-    background-image: radial-gradient(#52C8F0, #097DB0);
+    background: #423a76;
     font-family: Abel, Arial, Verdana, sans-serif;
 }
 
@@ -20,6 +19,10 @@ h1.title-heading {
     top: 10%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
+}
+
+h1.greeting-wrapper {
+    color: #fff;
 }
 
 .center {
@@ -209,14 +212,12 @@ h1.title-heading {
 }
 
 /* Gigya style change */
-#loginDiv td > span,
 #divConnect td > span {
-    color: #005997 !important;
+    color: #fff !important;
     font-weight: bold;
 }
 
-#loginDiv td > span span,
 #divConnect td > span span {
-    color: #202129 !important;
+    color: #000 !important;
     font-weight: bold;
 }
